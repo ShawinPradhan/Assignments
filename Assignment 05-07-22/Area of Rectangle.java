@@ -1,17 +1,17 @@
+//To find the product of two numbers
+
 import java.util.Scanner;
-public class rect
+public class product
 {
 	public static void main(String[] args)
 	{
-		int l,b,a,p;
+		int n1,n2,prod;
 		Scanner s= new Scanner(System.in);
-		System.out.println("Enter length.:");
-		l = s.nextInt();
-		System.out.println("Enter breadth:");
-		b = s.nextInt();
-		a = l*b;
-		System.out.println("Area of Rectangle= "+l+" * "+b+" is: "+a);
-		p = 2*(l + b);
-		System.out.println("Perimeter of Rectangle is: "+p);
+		System.out.println("Enter a no.:");
+		n1= s.nextInt();
+		System.out.println("Enter a no.:");
+		n2= s.nextInt();
+		prod = n1*n2;
+		System.out.println("The product of "+n1+" and "+n2+" is: "+prod);
 	}
 }
