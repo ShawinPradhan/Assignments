@@ -4,12 +4,11 @@ public class rect
 	public static void main(String[] args)
 	{
 		int l,b,a;
-		Scanner s1= new Scanner(System.in);
+		Scanner s= new Scanner(System.in);
 		System.out.println("Enter length.:");
-		l = s1.nextInt();
-		Scanner s2= new Scanner(System.in);
+		l = s.nextInt();
 		System.out.println("Enter breadth:");
-		b = s2.nextInt();
+		b = s.nextInt();
 		a = l*b;
 		System.out.println("Area of Rectangle= "+l+" * "+b+" is: "+a);
 	}
