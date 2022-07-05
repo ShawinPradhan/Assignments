@@ -1,18 +1,20 @@
+//To calculate simple interest
+
 import java.util.Scanner;
 public class si
 {
 	public static void main(String[] args)
 	{
-		int p,r,t;
-		float i;
+		int principle,rate,time;
+		float interest;
 		Scanner s= new Scanner(System.in);
 		System.out.println("Enter principle:");
-		p = s.nextInt();
+		principle = s.nextInt();
 		System.out.println("Enter rate:");
-		r = s.nextInt();
+		rate = s.nextInt();
 		System.out.println("Enter no. of years:");
-		t = s.nextInt();
-		i = (float)(p*r*t)/100;
-		System.out.println("Simple Interest: "+i);
+		time = s.nextInt();
+		interest = (float)(principle*rate*time)/100;
+		System.out.println("Simple Interest: "+interest);
 	}
 }
