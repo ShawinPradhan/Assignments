@@ -7,7 +7,6 @@
  * avg < 90 Grade D
  *  */
 
-package basicpackage;
 
 import java.util.Scanner;
 public class RelationalOperatorDemo {
