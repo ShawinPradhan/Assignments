@@ -40,8 +40,7 @@ public class RelationalOperatorDemo {
 		else if(avg>=40)
 		System.out.println("Grade C");
 		
-		else if(avg<40)
+		else
 		System.out.println("Grade D");
-		
 	}
 }
