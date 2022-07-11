@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class OddLoop {
 
 	public static void main(String[] args) {
-		int range, i; //i is the counter variable that will count loop and range is till which number we want to find even nos.
+		int range, i; //i is the counter variable that will count loop and range is till which number we want to find odd nos.
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Enter the range: "); // We need to put the range
 		range = sc.nextInt(); // Scanning the input and storing in variable range
