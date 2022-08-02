@@ -120,7 +120,7 @@ public class RestaurantWork {
 			case 4:
 				System.exit(0);
 			default:
-				System.out.println("Wrong Choice!!");
+				System.out.println("Sorry our restaurant has been reserved for today!");
 			}
 		}
 		else if(choice.equalsIgnoreCase("Regular"))
