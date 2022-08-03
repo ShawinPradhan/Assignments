@@ -1,11 +1,11 @@
 package abstractiondemo;
 import java.util.Scanner;
 
-class RooftopPoolCafe{
+class RooftopPoolCafe{ //main class
 	int resno; //reservation number
 	String name; //name of person who reserved
 	int people; // number of people attending
-	final String cafe = "Bird's View"; //name of the roof top restaurant
+	final String cafe = "BIRD's VIEW"; //name of the roof top restaurant
 	
 	public RooftopPoolCafe(int resno, String name, int people) {
 		super();
@@ -17,60 +17,79 @@ class RooftopPoolCafe{
 	
 }
 
-interface Restraunt{
+interface Restraunt{ //hierarchical inheritance
 	void menu();
 }
 
 interface Starter extends Restraunt{
 	void smenu();
+	void dessert();
 }
 
 interface Bar extends Restraunt{
 	void barmen();
 }
 
-class Party extends RooftopPoolCafe implements Bar,Starter{
+class Dine extends RooftopPoolCafe implements Bar,Starter{
 
-	public Party(int resno, String name, int people) {
+	public Dine(int resno, String name, int people) {
 		super(resno, name, people);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void menu() {
-		System.out.println("This is the Main menu.");
+		System.out.println("Main Course:");
+		System.out.println("1)Grilled Salmon with Dill Sauce "
+				+ "\n2)Roast Mutton with Vegetable"
+				+ "\n3)Chicken and Mushroom Pie");
 		
 	}
 
 	@Override
 	public void barmen() {
-		System.out.println("This is the Bar menu.");
+		System.out.println("Bar Menu:");
+		System.out.println("1)Dirty Martini"
+				+ "\n2)Bombay Saphire");
 		
 	}
 
 	@Override
 	public void smenu() {
-		System.out.println("This is the Starter menu.");
+		System.out.println("Starter Menu:");
+		System.out.println("1)Spring Rolls "
+				+ "\n2)French Onion Soup"
+				+ "\n3)Caesar Salad");
 		
 	}
+
+	@Override
+	public void dessert() {
+		System.out.println("Desserts:");
+		System.out.println("1)Apple Pie with Cream "
+				+ "\n2)Vanilla Ice Cream"
+				+ "\n3)Blueberry Cheese Cake");
+		
+	}
+	
+}
+
+class Party extends Dine{
+
+	public Party(int resno, String name, int people) {
+		super(resno, name, people);
+		// TODO Auto-generated constructor stub
+	} 
 	
 	void bar()
 	{
 		System.out.println("The bar is open for all till 11 PM.");
 	}
 	
-}
-
-class Regular extends Party{
-
-	public Regular(int resno, String name, int people) {
-		super(resno, name, people);
-		// TODO Auto-generated constructor stub
-	}
-	
 	void display()
 	{
 		System.out.println();
+		System.out.println(cafe);
 		System.out.println("Reservation no.: "+resno);
 		System.out.println("Name: "+name);
 		System.out.println("No. of people attending: "+people);
@@ -89,60 +108,67 @@ public class RestaurantWork {
 		n  = sc.nextInt();
 		System.out.println("Name of person who reserved: ");
 		na = sc.next();
-		Regular reg =new Regular(r,na,n);
-		/*reg.menu();
-		reg.display();
-		*/
+		Party pt =new Party(r,na,n);
 		int ch;
 		String choice;
-		System.out.println("What is your reservation for?  \n1)Party   2)Regular");
+		do {
+		System.out.println();
+		System.out.println("What is your reservation for?  \n1)Party   2)Dine");
 		choice = sc.next();
 		if(choice.equalsIgnoreCase("Party"))
 		{
 			System.out.println("The whole place has been reserved by: "+na);
-			System.out.println("Please choose which menu:  \n1)Main Menu   2)Starter Menu  "
-					+ "3)Bar  4)Exit");
+			System.out.println("Please choose which menu:  \n1)Main Course   2)Starter Menu  "
+					+ "3)Bar  4)Dessert  5)Bill/Exit");
 			ch = sc.nextInt();
 			switch(ch)
 			{
 			case 1:
-				reg.menu();
-				reg.display();
+				pt.menu();
+				pt.display();
 				break;
 			case 2:
-				reg.smenu();
-				reg.display();
+				pt.smenu();
+				pt.display();
 				break;
 			case 3:
-				reg.bar();
-				reg.display();
+				pt.bar();
+				pt.display();
 				break;
 			case 4:
+				pt.dessert();
+				pt.display();
+				break;
+			case 5:
 				System.exit(0);
 			default:
 				System.out.println("Sorry our restaurant has been reserved for today!");
 			}
 		}
-		else if(choice.equalsIgnoreCase("Regular"))
+		else if(choice.equalsIgnoreCase("Dine"))
 		{
 			System.out.println("Please choose which menu:  \n1)Main Menu   2)Starter Menu  "
-					+ "3)Bar  4)Exit");
+					+ "3)Bar  4)Dessert  5)Bill/Exit");
 			ch = sc.nextInt();
 			switch(ch)
 			{
 			case 1:
-				reg.menu();
-				reg.display();
+				pt.menu();
+				pt.display();
 				break;
 			case 2:
-				reg.smenu();
-				reg.display();
+				pt.smenu();
+				pt.display();
 				break;
 			case 3:
-				reg.barmen();
-				reg.display();
+				pt.barmen();
+				pt.display();
 				break;
 			case 4:
+				pt.dessert();
+				pt.display();
+				break;
+			case 5:
 				System.exit(0);
 			default:
 				System.out.println("Wrong Choice!!");
@@ -151,7 +177,7 @@ public class RestaurantWork {
 		else
 			System.out.println("Sorry, We are full!!");
 		
-
+		}while(true);
 	}
 
 }
