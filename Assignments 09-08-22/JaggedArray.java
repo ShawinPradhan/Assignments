@@ -20,7 +20,7 @@ public class JaggedArray {
 		}
 		
 		//printing a jagged array
-		
+		System.out.println("Jagged Array: ");
 		for(i=0;i<arr.length;i++)
 		{
 			for(j=0;j<arr[i].length;j++)
