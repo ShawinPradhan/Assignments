@@ -45,6 +45,7 @@ public class TwoDArray {
 			System.out.println();
 		}
 		System.out.println();
+		//getting class of the array
 		Class c = a.getClass();
 		String name =c.getName();
 		System.out.println("Class name is: "+name);
